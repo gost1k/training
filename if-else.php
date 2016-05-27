@@ -72,6 +72,12 @@ else
     echo 'Строка 4 <br>';
 }
 
+if(false) echo 'Yes<br>';
+else echo 'No<br>';
+
+
+
+
 echo '<br>Эта строка находится за блоком условий<br>';
 
 
