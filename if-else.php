@@ -19,7 +19,17 @@ if ($c == 1) echo '$c == 1'.'<br>';
     elseif ($e == 3) echo '$e == 3'.'<br>';
 else echo 'Условия не выполнились<br>';
 
+$a = 1;
+$b = '1';
 
+echo '<br>';
+if ($a == $b) echo '$a == $b'.'<br>';
+else echo '$a != $b'.'<br>';
+
+
+echo '<br>';
+if ($a === $b) echo '$a === $b'.'<br>';
+else echo '$a !== $b'.'<br>';
 
 echo '<br>Эта строка находится за блоком условий<br>';
 
