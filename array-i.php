@@ -1,4 +1,5 @@
 <?php
+//Массивы
 $lang[] = "html";
 $lang[] = "css";
 $lang[] = "php";
