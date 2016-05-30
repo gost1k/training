@@ -1,4 +1,5 @@
 <?php
+//if-elseif-else operation
 
 $a = 10;
 $b = 15;

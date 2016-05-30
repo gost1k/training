@@ -1,4 +1,5 @@
 <?php
+//Switch
 $year = 2008;
 
 switch($year)

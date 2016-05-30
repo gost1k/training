@@ -1,4 +1,5 @@
 <?php
+//Title from MySql
 //Подключаемся
 $link = mysql_connect('localhost', 'root', '')
     or die('Не удалось подключится к базе данных: ' .mysql_error());
