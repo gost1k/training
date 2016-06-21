@@ -11,11 +11,11 @@ $limit = 4;
                        AND date='2016-06-18'
                        ORDER BY id DESC
                        LIMIT $limit");*/
-$result = mysql_query("SELECT title,text,time,date,author FROM news
+$result = mysql_query("SELECT id,title,text,time,date,author FROM news
                        ORDER BY id DESC
                        LIMIT $limit");
 
-mysql_close();
+
 while($row = mysql_fetch_array($result))
 {?>
 <h1><?php echo  $row['title'];?></h1>
@@ -23,7 +23,6 @@ while($row = mysql_fetch_array($result))
 <p>Время новости: <?php echo  $row['time'];?></p>
 <p>Дата публикации: <?php echo  $row['date'];?></p>
 <p>Автор: <?php echo  $row['author'];?></p>
-<?php
-}
-
-?>
+    <a href="edit.php?id=<?php echo $row['id']?>"> Редактировать новость</a><br>
+    <a href="delete.php?id=<?php echo $row['id']?>"> Удалить новость</a>
+<?php } mysql_close();?>
