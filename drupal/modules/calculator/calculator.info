@@ -1,0 +1,4 @@
+name = Calculator
+description = custom module to substrack and addition of numbers
+version = 7.x
+core = 7.x
