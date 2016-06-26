@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script>
+    var n;
+    for (n=0; n<=10; n++){
+        alert(n);
+    }
+</script>-->
+<script>
+    alert('1');
+    var money = prompt('Сумма вклада:');
+    var proc = prompt('Проценты %');
+    var years = prompt('Срок вклада');
+    for(var n=0; n<=years; n++){
+        money = money + money * proc / 100;
+        alert('Сумма вклада: ' + money);
+    }
+
+
+</script>
+</body>
+</html>
