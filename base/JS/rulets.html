@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = 0;
+    do {
+        if((Math.random() * 6 ) < 1 ){
+            alert('Финита ля комедия');
+            break;
+        }
+
+        n++;
+    } while(prompt('1 - играем, другое - стоп') == '1')
+    alert ('Раундов сыграно' + n);
+
+</script>
+<!--<script>
+    var n = 0;
+    do {
+        if(prompt('Вы желаете сыграть? 1 - да') == 1){
+            if((Math.random() * 6) < 1){
+                alert('Финита ля комедия');
+                break
+            }
+                n++;
+        }
+        else {
+            alert('Вы ввели не верное число');
+            break;
+        }
+    }while(true);
+    alert('Раундов выигранно:' + n);
+
+
+
+</script>-->
+
+</body>
+</html>
