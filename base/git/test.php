@@ -1,8 +1,4 @@
 <?php
 //test hello
-echo "hello";
-echo "my darling";
-echo 1;
-echo "Branches goodbye";
-echo "1231";
+echo "Этот тест для ветки master";
 ?>
