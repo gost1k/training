@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .large{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="container">
+
+        <h1> {{ title }}</h1>
+        <button
+                v-bind:class="[sizeToggle ? 'large' : '', {'rounded': isRounded}]"
+                v-bind:style="styles"
+                v-bind:disabled="disabled"
+        > START </button>
+
+        <ul>
+            <li>
+                <input type="checkbox" v-model="sizeToggle">
+                <label for="">Увеличить шрифт</label>
+            </li>
+            <li>
+                <input type="checkbox" v-model="isRounded">
+                <label for="">Округлить шрифт</label>
+            </li>
+            <li>
+                <input type="checkbox" v-model="disabled">
+                <label for="">Disable</label>
+            </li>
+            <li>
+                <input type="text" v-model="fontColor">
+
+            </li>
+            <li>
+                <input type="text" v-model="backgroundColor">
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

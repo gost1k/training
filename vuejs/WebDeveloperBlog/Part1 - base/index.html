@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    // v-show - существует в DOM, v-if - Удаляется из DOM
+    <h1 v-text="message" v-show="view"></h1>
+    <h1 v-html="message2" v-show="view"></h1>
+    <h1 v-html="message2" v-if="view" ></h1>
+    <h1 v-html="message2" v-esle="view" ></h1>
+
+    //v-modal - связывает текст и input
+    <input type="text" v-model="message">
+    <h1>{{message}}</h1>
+
+    <input type="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+
+    // Директива v-pre
+    <h1 v-pre>Пропуск компиляции для элемента и его потомков</h1>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

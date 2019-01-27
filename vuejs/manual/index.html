@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app2">
+        <span v-bind:title="message">
+            Text for viewing
+        </span>
+    </div>
+
+    <div id="app3">
+        <span v-if="seen">
+            Now i am seen
+        </span>
+    </div>
+
+    <div id="app4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse message</button>
+    </div>
+
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+
+    <div id="app7">
+        <ol>
+            <todo-item
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id">
+            </todo-item>
+        </ol>
+    </div>
+
+    <div id="demo">
+        <p>{{ fullName }}</p>
+    </div>
+
+    <ul id="example1">
+        <li v-for="item in items">
+            {{ item.message }}
+        </li>
+    </ul>
+
+    <div id="todo-list-example">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">Добавить задачу</label>
+            <input
+                    v-model="newTodoText"
+                    id="new-todo"
+                    placeholder="Например, покормить кота"
+            >
+            <button>Добавить</button>
+        </form>
+        <ul>
+            <li
+                    is="todo-item"
+                    v-for="(todo, index) in todos"
+                    v-bind:key="todo.id"
+                    v-bind:title="todo.title"
+                    v-on:remove="todos.splice(index, 1)"
+            ></li>
+        </ul>
+    </div>
+
+    <div id="example-2">
+        <button v-on:click="greet">Попреведствовать</button>
+    </div>
+
+        <div id="components-demo">
+            <button-counter></button-counter>
+        </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>

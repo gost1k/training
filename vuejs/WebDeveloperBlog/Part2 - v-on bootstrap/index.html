@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div id="app">
+    <div class="container">
+        <h1> App </h1>
+        <h1>{{ count }}</h1>
+        <!-- v-on == @ -->
+        <!-- v-on:click == @click -->
+        <button @click="countUp" class="btn btn-success"> +1 </button>
+        <button @click="countDown" class="btn btn-danger"> -1 </button>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
