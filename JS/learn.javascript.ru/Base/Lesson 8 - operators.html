@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+var x = 1;
+
+x = -x;
+alert( x ); // -1, применили унарный минус
+</script>
+
+<script>
+    var a = "моя" + " " + "строка";
+    alert( a ); // моя строка
+
+/*    alert( '1' + 2 ); // "12"
+    alert( 2 + '1' ); // "21"*/
+</script>
+
+<script>
+    var apples = "2";
+    var oranges = "3";
+    alert( apples + oranges ); // "23", так как бинарный плюс складывает строки
+
+    var apples = "2";
+    var oranges = "3";
+    alert( +apples + +oranges ); // 5, число, оба операнда предварительно преобразованы в числа
+</script>
+
+</body>
+</html>

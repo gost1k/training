@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var a = true; // присваивать явно
+
+    var b = 3 > 4; // или как результат сравнения
+    alert( b ); // false
+
+    alert( a == b ); // (true == false) неверно, выведет false
+    alert( '2' > 1 ); // true, сравнивается как 2 > 1
+    alert( '01' == 1 ); // true, сравнивается как 1 == 1
+    alert( false == 0 ); // true, false становится числом 0
+    alert( true == 1 ); // true, так как true становится числом 1.
+    alert( 0 == false ); // true
+    alert( '' == false ); // true
+
+    //Для проверки равенства без преобразования типов используются операторы строгого равенства === (тройное равно) и !==.
+    alert( 0 === false ); // false, т.к. типы различны
+
+    //Null/undefined
+    alert( null > 0 ); // false
+    alert( null == 0 ); // false
+    alert( null >= 0); // true
+
+    alert( undefined > 0 ); // false (1)
+    alert( undefined < 0 ); // false (2)
+    alert( undefined == 0 ); // false (3)
+</script>
+
+
+</body>
+</html>
