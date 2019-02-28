@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var str = "jQuery";
+    alert( str.charAt(0) ); // "j" сли символа нет – charAt выдает пустую строк
+    var str = "Я - современный браузер!";
+    alert( str[0] ); // "Я" для пустого значения скобки – undefined:
+
+
+    alert( "Интерфейс".toUpperCase() ); // ИНТЕРФЕЙС
+    alert( "Интерфейс" [0].toLowerCase() ); // 'и'
+
+
+    var str = "Widget with id";
+    alert( str.indexOf("Widget") ); // 0, т.к. "Widget" найден прямо в начале str
+    alert( str.indexOf("id") ); // 1, т.к. "id" найден, начиная с позиции 1
+    alert( str.indexOf("widget") ); // -1, не найдено, так как поиск учитывает регистр
+
+
+    //Task
+    let name = 'вася';
+    function firstCharToUpperCase(name) {
+        firstChar = name.charAt(0);
+        lastName = name.slice(1);
+        return modifName = firstChar + lastName;
+    }
+    alert(firstCharToUpperCase(name));
+
+    //Task 2
+    function checkSpam(str) {
+    var lowerStr = str.toLowerCase();
+
+    return !!(~lowerStr.indexOf('viagra') || ~lowerStr.indexOf('xxx'));
+    }
+
+    alert( checkSpam('buy ViAgRA now') );
+
+    //Task 3
+    function truncate(text, length) {
+        if (text.length > length) {
+            return text.slice(0, length-3) + '...';
+        }
+        return text;
+    }
+    alert(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20))
+
+
+</script>
+</body>
+</html>
