@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var person = {};
+    person.name = 'Василий';
+    person.age = '25';
+
+    alert( person.name + ': ' + person.age ); // "Вася: 25"
+
+
+    var person = {};
+    person['age'] = '25';
+    person['name'] = 'Михаил';
+
+    alert( person['age'] + 'Имя:' + person['name']);
+
+
+    var man = {};
+    man['name'] = 'Женя';
+    var key = 'name';
+
+    alert (man[key]);
+
+
+    var menuSetup = {
+        width: 300px,
+        height: 200px,
+        title: "Menu"
+    };
+    // то же самое, что:
+
+    var menuSetup = {};
+    menuSetup.width = 300;
+    menuSetup.height = 200;
+    menuSetup.title = 'Menu';
+
+    var user = {
+        name: "Таня",
+        age: 25,
+        size: {
+            top: 90,
+            middle: 60,
+            bottom: 90
+        }
+    }
+
+    alert(user.name) // "Таня"
+
+    alert(user.size.top) // 90
+
+    //task
+/*    Создайте пустой объект user.
+        Добавьте свойство name со значением Вася.
+        Добавьте свойство surname со значением Петров.
+        Поменяйте значение name на Сергей.
+        Удалите свойство name из объекта.*/
+    var user = {};
+    user.name = 'Вася';
+    user.surname = 'Петров';
+    user.name = 'Сергей';
+    delete user.name;
+
+
+</script>
+</body>
+</html>
