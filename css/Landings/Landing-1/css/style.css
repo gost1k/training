@@ -1,0 +1,135 @@
+body {
+    color: #d4d4d4;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+}
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 60px;
+    margin-bottom: 90px;
+}
+
+h1 .lg {
+    font-size: 70px;
+    font-weight: 700;
+    letter-spacing: -4.2px;
+    line-height: 80px;
+    display: block;
+}
+
+h1 .sm {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: -4.2px;
+    line-height: 60px;
+}
+
+/* buttons */
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    height: 42px;
+    padding: 10px 35px 0;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #f39c12;
+    color: #fff;
+    border-color: #f39c12;
+}
+
+header {
+    position: absolute;
+    top: 84px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu__item {
+    margin-left: 90px;
+    position: relative;
+}
+
+.menu__item:after {
+    content: '\\\\';
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -1.08px;
+    position: absolute;
+    left: 100%;
+    margin-left: 34px;
+    top: 0;
+}
+
+.menu__item:last-child::after {
+    display: none;
+}
+
+.menu__link {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: -1.08px;
+}
+
+.menu__link:hover {
+    color: #0d0d0d;
+}
+
+/* banner */
+
+.banner {
+    padding-top: 450px;
+    padding-bottom: 280px;
+    text-align: center;
+    height: 1100px;
+    background: url(../img/banner.png) no-repeat center top;
+}
