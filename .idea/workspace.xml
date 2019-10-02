@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="css">
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 1 - Hello World.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 11 - uibasic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 2 - include.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 5 - var.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 8 - operators.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 9 - comparsion.html" afterDir="false" />
+    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="debugger and typescript practice">
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/base.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/mockup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Storage/indexeddb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/Storage/localstorage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/learn.javascript.ru/code-style/debugger.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/angrybirds.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/angrybirds.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/cycle-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/cycle-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/elseif.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/elseif.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/javascript-if.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/javascript-if.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/rulets.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/mini-games/rulets.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 11 - uibasic.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -52,28 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.js" />
-        <option value="$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.html" />
-        <option value="$PROJECT_DIR$/css/WebDeveloperBlog/js/script.js" />
-        <option value="$PROJECT_DIR$/css/WebDeveloperBlog/index.html" />
-        <option value="$PROJECT_DIR$/css/WebDeveloperBlog/css/style.css" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 1 - Hello World.html" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 2 - include.html" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 3 - var.html" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 4 - operators.html" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 9 - comparsion.html" />
-        <option value="$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 11 - uibasic.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="538" />
-    <option name="width" value="1382" />
-    <option name="height" value="1044" />
-  </component>
+  <component name="ProjectId" id="1RU8O0TXVwVdPbWCWr6WiQqrcWt" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -93,43 +53,6 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="trainingNew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingNew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingNew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingNew" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingNew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingNew" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
-              <item name="learn.javascript.ru" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingNew" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingNew" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
-              <item name="learn.javascript.ru" type="462c0819:PsiDirectoryNode" />
-              <item name="Base" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -139,7 +62,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -189,6 +113,8 @@
       <workItem from="1549114559052" duration="11818000" />
       <workItem from="1549142846143" duration="4803000" />
       <workItem from="1549831424034" duration="4419000" />
+      <workItem from="1569710278647" duration="2701000" />
+      <workItem from="1570044493393" duration="5141000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -207,203 +133,31 @@
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21040000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1165" y="0" width="1382" height="1050" extended-state="4" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21613394" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.19616205" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="right" id="Remote Host" order="0" weight="0.19616205" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="right" id="Commander" order="2" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/JS/TypeScript/base.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ReDir" />
     <MESSAGE value="Vue" />
     <MESSAGE value="css" />
     <option name="LAST_COMMIT_MESSAGE" value="css" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part10 - Pagination/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part10 - Pagination/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part11 - show-hide pass/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/WebDeveloperBlog/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/drupal/modules/calculator/calculator.module">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/nCrawler.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/WebDeveloperBlog/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding>
-            <element signature="n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/WebDeveloperBlog/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/angrybirds.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/cycle-2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/elseif.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/hello.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/javascript-if.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/mini-games/rulets.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 1 - Hello World.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 2 - include.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 5 - var.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 8 - operators.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 9 - comparsion.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JS/learn.javascript.ru/Base/Lesson 11 - uibasic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

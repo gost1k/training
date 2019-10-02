@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    localStorage.setItem('name', 'gost1k');
+
+    let a = localStorage.getItem('name');
+    console.log(localStorage.getItem('name'));
+
+    localStorage.id = 1;
+    console.log(localStorage.id);
+
+    delete localStorage.id;
+    localStorage.clear();
+</script>
+
+
+</body>
+</html>

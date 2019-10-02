@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let openRequest = indexedDB.open("db", 2);
+
+    // создаём хранилище объектов для books, если ешё не существует
+    openRequest.onupgradeneeded = function() {
+        let db = openRequest.result;
+        if (!db.objectStoreNames.contains('books')) { // if there's no "books" store
+            db.createObjectStore('books', {keyPath: 'id'}); // create it
+        }
+    };
+</script>
+</body>
+</html>
