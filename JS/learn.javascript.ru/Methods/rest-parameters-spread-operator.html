@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rest-parameters-spread-operator</title>
+</head>
+<body>
+<script>
+    let a = [1,2,3,4,5];
+    let b = 'str';
+    let merge = ['some', ...b, ...a];
+    console.log(merge);
+
+    function sum(...args) {
+        let sum = 0;
+        for(let arg of args) sum += arg;
+        return sum;
+    }
+    let result = sum(1,2,3,7,10);
+    console.log(result);
+
+</script>
+</body>
+</html>

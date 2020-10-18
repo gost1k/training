@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>optional-chaining</title>
+</head>
+<body>
+<script>
+    let object = {
+        some_prop: 'value',
+    };
+    let obj2 = {};
+    console.log('Object', object);
+    console.log('if no object prop',object?.any_prop?.val)
+    if(obj2?.value) console.log('Working');
+</script>
+</body>
+</html>
