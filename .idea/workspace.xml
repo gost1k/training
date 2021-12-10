@@ -19,13 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="debugger and typescript practice">
-      <change afterPath="$PROJECT_DIR$/JS/oop/extends.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/oop/implements.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/oop/interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/oop/protected.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/oop/set.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="oop testing">
+      <change afterPath="$PROJECT_DIR$/react/my-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/ClassCounter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/Counter.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/PostItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/PostList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/UI/button/MyButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/UI/button/MyButton.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/UI/input/MyInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/components/UI/input/MyInput.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/my-app/src/styles/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +172,8 @@
       <workItem from="1602968102537" duration="1990000" />
       <workItem from="1603026344959" duration="2415000" />
       <workItem from="1603035408200" duration="1466000" />
-      <workItem from="1639137486771" duration="4399000" />
+      <workItem from="1639137486771" duration="5212000" />
+      <workItem from="1639149165407" duration="3864000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -178,16 +189,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549120254348</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="oop testing">
+      <created>1639142419837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639142419838</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/JS/TypeScript/base.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -205,6 +218,7 @@
     <MESSAGE value="ReDir" />
     <MESSAGE value="Vue" />
     <MESSAGE value="css" />
-    <option name="LAST_COMMIT_MESSAGE" value="css" />
+    <MESSAGE value="oop testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="oop testing" />
   </component>
 </project>
