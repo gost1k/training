@@ -10,8 +10,13 @@ let x: [number, boolean] = [2, true];
 // Types
 type Style = 'bold' | 'italic';
 let font: Style;
-// font = 'some style' // Error
-font = 'bold';
+font = 'bold'; // font = 'some style' // Error
+
+// ARRAYS
+let names = ['luigi', 'mario', 'yoshi'];
+names.push('toad');
+// names.push(3); Wrong! Array of stings
+// names[0] = 3; Same error
 
 type MyList = [number?, string?, boolean?];
 const arr: MyList = [];
@@ -25,6 +30,10 @@ function warn(): void {
 }
 warn();
 
+const circ = (diameter: number) => {
+    return diameter * Math.PI;
+}
+console.log(circ(7.5)); // 23.561...
 
 // Classes
 class Animal {

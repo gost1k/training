@@ -19,61 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="react start">
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/assets/Maestroc.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/assets/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/components/JobsList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/shims-vue.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/types/Job.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/src/types/orderTerm.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue3ts/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="vue3+ts jump start by The Net Ninja">
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/sandbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/sandbox.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/vuejs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/vuejs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part1 - base/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part1 - base/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part1 - base/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part1 - base/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part1 - base/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part1 - base/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part10 - Pagination/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part10 - Pagination/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part10 - Pagination/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part10 - Pagination/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part11 - show-hide pass/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part11 - show-hide pass/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part11 - show-hide pass/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part11 - show-hide pass/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part2 - v-on bootstrap/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part2 - v-on bootstrap/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part2 - v-on bootstrap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part2 - v-on bootstrap/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part3 - UrlCleaner/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part3 - UrlCleaner/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part3 - UrlCleaner/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part3 - UrlCleaner/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part4 - v-bind styles/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part4 - v-bind styles/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part4 - v-bind styles/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part4 - v-bind styles/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part5 - Components/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part5 - Components/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part5 - Components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part5 - Components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part6 - Animation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part6 - Animation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part6 - Animation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part6 - Animation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part7 - Routing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part7 - Routing/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part7 - Routing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part7 - Routing/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part8 - Task List/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part8 - Task List/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part8 - Task List/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part8 - Task List/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/Part9 - Adaptive Menu/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/WebDeveloperBlog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/WebDeveloperBlog/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/manual/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/manual/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vuejs/manual/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue2/vuejs/manual/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/TypeScript/base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/base.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +104,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Vue/vue3ts/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/Vue/vue3ts-JumpStart/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -214,7 +166,8 @@
       <workItem from="1639149165407" duration="3983000" />
       <workItem from="1645441792366" duration="3867000" />
       <workItem from="1645445745490" duration="80000" />
-      <workItem from="1645445843131" duration="8202000" />
+      <workItem from="1645445843131" duration="10272000" />
+      <workItem from="1645725665449" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -244,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639153137459</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="vue3+ts jump start by The Net Ninja">
+      <created>1645465439542</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645465439542</updated>
+    </task>
+    <task id="LOCAL-00006" summary="vue3+ts jump start by The Net Ninja">
+      <created>1645465614926</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645465614926</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +244,7 @@
     <MESSAGE value="css" />
     <MESSAGE value="oop testing" />
     <MESSAGE value="react start" />
-    <option name="LAST_COMMIT_MESSAGE" value="react start" />
+    <MESSAGE value="vue3+ts jump start by The Net Ninja" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue3+ts jump start by The Net Ninja" />
   </component>
 </project>
