@@ -1,7 +1,3 @@
-var character = 'luigi';
-console.log(character);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) {
-    console.log(input);
-});
+"use strict";
+console.log('test');
+console.log(1);

@@ -19,13 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="vue3+ts jump start by The Net Ninja">
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/sandbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/sandbox.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/styles.css" afterDir="false" />
+    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="moved code">
+      <change afterPath="$PROJECT_DIR$/JS/ECMAScript/testFiles/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/sandbox.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JS/TypeScript/base/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/TypeScript/base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/base.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/sandbox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/sandbox.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,9 +103,13 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/Vue/vue3ts-JumpStart/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -114,11 +120,11 @@
       <recent name="C:\Users\nCrawler\PhpstormProjects\training\vuejs\WebDeveloperBlog\Part10 - Pagination" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src" />
+      <recent name="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public" />
+      <recent name="$PROJECT_DIR$/JS/TypeScript/base" />
       <recent name="$PROJECT_DIR$/Vue/vue3ts/src/assets" />
       <recent name="$PROJECT_DIR$/Vue/vue3ts/src" />
-      <recent name="$PROJECT_DIR$/Vue" />
-      <recent name="$PROJECT_DIR$/Vue2" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -167,7 +173,10 @@
       <workItem from="1645441792366" duration="3867000" />
       <workItem from="1645445745490" duration="80000" />
       <workItem from="1645445843131" duration="10272000" />
-      <workItem from="1645725665449" duration="1333000" />
+      <workItem from="1645725665449" duration="1832000" />
+      <workItem from="1645798841757" duration="2218000" />
+      <workItem from="1645801078170" duration="5238000" />
+      <workItem from="1645807653974" duration="1977000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -211,18 +220,37 @@
       <option name="project" value="LOCAL" />
       <updated>1645465614926</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="base ts">
+      <created>1645729406799</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645729406799</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ES 2020">
+      <created>1645806804097</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645806804097</updated>
+    </task>
+    <task id="LOCAL-00009" summary="moved code">
+      <created>1645806822035</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1645806822035</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/JS/TypeScript/base.js" />
+        <option value="$PROJECT_DIR$/JS/oop/interface.js" />
         <option value="$PROJECT_DIR$/JS/oop/extends.js" />
         <option value="$PROJECT_DIR$/JS/oop/implements.js" />
-        <option value="$PROJECT_DIR$/JS/oop/interface.js" />
-        <option value="$PROJECT_DIR$/Vue/vue3ts/src/main.js" />
       </list>
     </option>
   </component>
@@ -245,6 +273,13 @@
     <MESSAGE value="oop testing" />
     <MESSAGE value="react start" />
     <MESSAGE value="vue3+ts jump start by The Net Ninja" />
-    <option name="LAST_COMMIT_MESSAGE" value="vue3+ts jump start by The Net Ninja" />
+    <MESSAGE value="base ts" />
+    <MESSAGE value="ES 2020" />
+    <MESSAGE value="moved code" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved code" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
