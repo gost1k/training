@@ -4,8 +4,7 @@
 let a: number = 0;
 let isDone: boolean = false;
 let color: string = 'green';
-let array: number[]  = [1,2,3];
-let x: [number, boolean] = [2, true];
+let uid: string|number;
 
 // Types
 type Style = 'bold' | 'italic';
@@ -13,7 +12,11 @@ let font: Style;
 font = 'bold'; // font = 'some style' // Error
 
 // ARRAYS
-let names = ['luigi', 'mario', 'yoshi'];
+let array: number[]  = [1,2,3];
+let ninjas: string[] = []; //Array of strings
+let mixed: (string|number|boolean)[] = []; // Array of types
+let x: [number, boolean] = [2, true];
+let names = ['luigi', 'mario', 'yoshi']; // Array of strings
 names.push('toad');
 // names.push(3); Wrong! Array of stings
 // names[0] = 3; Same error
@@ -34,6 +37,40 @@ const circ = (diameter: number) => {
     return diameter * Math.PI;
 }
 console.log(circ(7.5)); // 23.561...
+
+
+
+// Objects
+let ninjaOne: object;
+ninjaOne = { name: 'yoshi', age: 30};
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    beltColour: string
+}
+ninjaTwo = { name: 'Mario',  age: 20, beltColour: 'black' };
+
+// Intarface
+interface checker {
+    firstName   : string;
+    lastName    : string;
+    age         : number;
+}
+function YesNo(ask: boolean) {
+    switch(ask) {
+        case true: return 'Yes'; break;
+        case false: return 'No'; break;
+    }
+}
+function hi(man: checker) {
+    debugger;
+    return 'Hello, my name' + man.firstName + 'second Name is' + man.lastName + 'Age: ' + man.age;
+}
+let user = {firstName : 'Павлик', lastName: 'Морозов', age: 4};
+console.log('hi(this.user)', hi(user));
+console.log('YesNo(true);', YesNo(true));
+
 
 // Classes
 class Animal {
@@ -70,23 +107,3 @@ let sam = new Snake('Sammy the Phyton'); //Build new class with construction nam
 let tom: Animal = new Horse('Tommy is palamino');
 sam.move();
 tom.move(34); // Set prop value for class method
-
-// Intarface
-interface checker {
-    firstName   : string;
-    lastName    : string;
-    age         : number;
-}
-function YesNo(ask: boolean) {
-    switch(ask) {
-        case true: return 'Yes'; break;
-        case false: return 'No'; break;
-    }
-}
-function hi(man: checker) {
-    debugger;
-    return 'Hello, my name' + man.firstName + 'second Name is' + man.lastName + 'Age: ' + man.age;
-}
-let user = {firstName : 'Павлик', lastName: 'Морозов', age: 4};
-console.log('hi(this.user)', hi(user));
-console.log('YesNo(true);', YesNo(true));
