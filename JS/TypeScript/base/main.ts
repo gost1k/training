@@ -1,18 +1,17 @@
 // import { users } require('./mockup.js');
 
-// -----------------------------------
-// ------------ VARIABLES ------------
-// -----------------------------------
+/**
+ * ----------- VARIABLES ---------------
+  */
 let a: number = 0;
 let isDone: boolean = false;
 let color: string = 'green';
 let uid: string|number;
 let arrOfStrings : string[];
 
-
-// -----------------------------------
-// ----------- TYPES -----------------
-// -----------------------------------
+/**
+ * ----------- TYPES ---------------
+  */
 type Style = 'bold' | 'italic';
 let font: Style;
 font = 'bold'; // font = 'some style' // Error
@@ -27,9 +26,9 @@ const greet1 = (user: objWithName) => {
     console.log(`${user.name} says hello`);
 }
 
-// -----------------------------------
-// -------------- ARRAYS -------------
-// -----------------------------------
+/**
+ * ----------- ARRAYS ---------------
+  */
 let array: number[]  = [1,2,3];
 let ninjas: string[] = []; //Array of strings
 let mixed: (string|number|boolean)[] = []; // Array of types
@@ -45,9 +44,10 @@ const arr: MyList = [];
 // arr.push('string');
 // arr.push(false);
 
-// -----------------------------------
-// ------------ Functions ------------
-// -----------------------------------
+
+/**
+ * ----------- Functions ---------------
+ */
 let greet: (a: string, b: string) => void;
 let calc: (a: number, b: number, c: string) => number;
 greet = (name: string, greeting: string) => {
@@ -75,10 +75,9 @@ const circ = (diameter: number) => {
 }
 console.log(circ(7.5)); // 23.561...
 
-
-// -----------------------------------
-// ----------- Objects ---------------
-// -----------------------------------
+/**
+ * ----------- Objects ---------------
+ */
 let ninjaOne: object;
 ninjaOne = { name: 'yoshi', age: 30};
 
@@ -89,13 +88,24 @@ let ninjaTwo: {
 }
 ninjaTwo = { name: 'Mario',  age: 20, beltColour: 'black' };
 
-// -----------------------------------
-// ---------- Intarface --------------
-// -----------------------------------
+
+/**
+ * ----------- DOM ---------------
+  */
+const anchor = document.querySelector('a')!; // "!" If not exist return empty object
+const form = document.querySelector('.new-item-form') as HTMLFormElement; // Set type
+const details = document.querySelector('#details') as HTMLInputElement;
+console.log(anchor.href);
+console.log(details.valueAsNumber) // Parse Number
+
+/**
+ * ----------- Intarface --------------
+ */
 interface checker {
-    firstName   : string;
-    lastName    : string;
-    age         : number;
+    firstName       : string;
+    lastName        : string;
+    age             : number;
+    speak(a: string): void;
 }
 function YesNo(ask: boolean) {
     switch(ask) {
@@ -107,15 +117,68 @@ function hi(man: checker) {
     debugger;
     return 'Hello, my name' + man.firstName + 'second Name is' + man.lastName + 'Age: ' + man.age;
 }
-let user = {firstName : 'Павлик', lastName: 'Морозов', age: 4};
+let user: checker = {
+    firstName : 'Павлик',
+    lastName: 'Морозов',
+    age: 4,
+    speak(text: string): void {
+        console.log(text)
+    }
+};
+
 console.log('hi(this.user)', hi(user));
 console.log('YesNo(true);', YesNo(true));
 
-// -----------------------------------
-// ----------- Classes ---------------
-// -----------------------------------
+/**
+* ----------- Generic ---------------
+ */
+// <T>
+// <T extends object>
+// <T extends {name: string}>
+const addUID = <T extends { name: string }>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+let docOne = addUID({name: 'yoshi', age: 40});
+console.log(docOne.age);
+
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+const docThree: Resource<Object> = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'shoun' }
+}
+
+/**
+ * -------- ENUMS ------------
+ */
+enum ResourceType {
+    BOOK, AUTHOR, FILM, DIRECTOR, PERSON
+}
+
+interface Resource1<T> {
+    uid: number;
+    resourceType: ResourceType,
+    data: T;
+}
+const docFour: Resource1<object> = {
+    uid: 1,
+    resourceType: ResourceType.BOOK, // = 0
+    data: {title: 'name of the wind'}
+}
+
+/**
+ * ----------- Classes ---------------
+  */
 class Animal {
-    name: string;
+    public name: string;
+    readonly someVar: string; // Only for read
+    private anotherVar: number; // Only inside class
+
     constructor(TheName: string) {
         this.name = TheName;
     }
