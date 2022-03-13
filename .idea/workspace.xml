@@ -19,24 +19,26 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="moved code">
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/classes/Invoice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/classes/ListTemplate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/classes/ListTemplates.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/classes/Payments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/classes/invoice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/interfaces/HasFormatter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/app.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/classes/Invoice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/classes/ListTemplate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/classes/Payments.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/src/interfaces/HasFormatter.ts" afterDir="false" />
+    <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="vue js test">
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/Greeting.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/SubmitButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/Greetung.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/SubmitButton.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/example.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/sandbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/public/sandbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/TypeScript Tutorial - TheNetNinja/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +188,11 @@
       <workItem from="1645798841757" duration="2218000" />
       <workItem from="1645801078170" duration="5238000" />
       <workItem from="1645807653974" duration="1977000" />
-      <workItem from="1646057774211" duration="9779000" />
+      <workItem from="1646057774211" duration="10570000" />
+      <workItem from="1646288444888" duration="759000" />
+      <workItem from="1646934832321" duration="1678000" />
+      <workItem from="1646994471782" duration="5376000" />
+      <workItem from="1647178094574" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -251,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645806822035</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ts done nina course, some add at base">
+      <created>1646069313554</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646069313554</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +299,9 @@
     <MESSAGE value="base ts" />
     <MESSAGE value="ES 2020" />
     <MESSAGE value="moved code" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved code" />
+    <MESSAGE value="ts done nina course, some add at base" />
+    <MESSAGE value="vue js test" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue js test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
