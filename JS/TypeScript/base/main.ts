@@ -153,6 +153,50 @@ const docThree: Resource<Object> = {
     data: { name: 'shoun' }
 }
 
+interface User {
+    name: string;
+    age: number;
+}
+
+interface Message {
+    id: number;
+    text: string;
+}
+
+interface State<T> {
+    loading: boolean;
+    error: Error | null;
+    data: T;
+}
+
+type UserState = State<User>;
+type MessageState = State<Message>;
+const messageState: MessageState = {
+    loading: false,
+    error: null,
+    data: { id: 1, text: 'some'}
+}
+
+type Obj = Record<string, number>
+
+function getValue<T extends object, U extends keyof T>(obj: T, prop: U) {
+    return obj[prop]
+}
+const r1 = getValue({
+    name: 'Max',
+    age: 1000,
+}, 'name') // name or age
+
+
+function getKey<T extends object, U extends keyof T>(obj: T, value: T[U]) {
+    const key = (Object.keys(obj) as Array<U>).find(k => obj[k] === value);
+    return key || null;
+}
+const key = getKey({
+    name: 'Max',
+    age: 1000,
+}, 'Max')
+
 /**
  * -------- ENUMS ------------
  */

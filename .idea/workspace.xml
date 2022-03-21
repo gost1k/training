@@ -20,25 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2a6cc1b-b284-4c91-85db-53028bc3d62f" name="Default" comment="vue js test">
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/Greeting.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/components/SubmitButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/Greetung.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/SubmitButton.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/tests/unit/example.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vue/vue-tests/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/JS/TypeScript/base/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +101,7 @@
     <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
@@ -193,6 +177,15 @@
       <workItem from="1646934832321" duration="1678000" />
       <workItem from="1646994471782" duration="5376000" />
       <workItem from="1647178094574" duration="48000" />
+      <workItem from="1647178146272" duration="12000" />
+      <workItem from="1647179825304" duration="670000" />
+      <workItem from="1647186248908" duration="1014000" />
+      <workItem from="1647243653624" duration="2877000" />
+      <workItem from="1647275659373" duration="370000" />
+      <workItem from="1647276104988" duration="5000" />
+      <workItem from="1647438772981" duration="1864000" />
+      <workItem from="1647591752063" duration="18000" />
+      <workItem from="1647849741469" duration="2829000" />
     </task>
     <task id="LOCAL-00001" summary="ReDir">
       <created>1549114859449</created>
@@ -264,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646069313554</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="vue js test">
+      <created>1647178152210</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647178152210</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
