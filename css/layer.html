@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS @layer — порядок слоёв против специфичности</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --blue: #3b82f6;
+        --red: #ef4444;
+        --green: #10b981;
+        --yellow: #f59e0b;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+
+      h2 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .demo {
+        display: grid;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 12px;
+        background: var(--panel-2);
+        border: 1px dashed var(--border);
+      }
+
+      .box {
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: #0b1220;
+      }
+      .title {
+        font-weight: 700;
+      }
+      .desc {
+        color: var(--muted);
+      }
+
+      /* 1) Объявляем порядок слоёв. Порядок ЗДЕСЬ важнее, чем порядок в файле */
+      @layer reset, base, components, utilities;
+
+      /* 2) Наполняем любым порядком — не важно где расположен блок в файле */
+
+      /* --- RESET --- */
+      @layer reset {
+        *,
+        *::before,
+        *::after {
+          box-sizing: border-box;
+        }
+        h1,
+        h2,
+        p {
+          margin: 0;
+        }
+        .box + .box {
+          margin-top: 8px;
+        }
+      }
+
+      /* --- BASE (раньше по приоритету, чем components) --- */
+      @layer base {
+        /* Высокая специфичность: (0,1,1) — класс + тег */
+        .demo .title {
+          color: var(--red);
+        }
+        .demo h2 {
+          font-size: 22px;
+        }
+      }
+
+      /* --- COMPONENTS (позже base → выигрывает по слою) --- */
+      @layer components {
+        /* Ниже специфичность: (0,1,0), но слой components идёт ПОЗЖЕ base
+           → это правило перекроет .demo .title из слоя base */
+        .title {
+          color: var(--blue);
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 8px 12px;
+          border-radius: 8px;
+          border: 1px solid var(--border);
+          color: var(--text);
+          text-decoration: none;
+          background: #0b1220;
+        }
+        .card {
+          padding: 12px;
+          border-radius: 10px;
+          border: 1px solid var(--border);
+          background: #0b1220;
+        }
+      }
+
+      /* --- UTILITIES (самый «поздний» слой) --- */
+      @layer utilities {
+        /* Утилиты должны побеждать всё, что выше, без !important */
+        .text-green {
+          color: var(--green);
+        }
+        .text-yellow {
+          color: var(--yellow);
+        }
+      }
+
+      /* ПРИМЕЧАНИЕ: стили ВНЕ слоёв имеют БОЛЬШИЙ приоритет,
+         чем любые @layer. Их лучше избегать в проекте или поместить в самый поздний слой. */
+    </style>
+  </head>
+  <body>
+    <h1>CSS @layer — управляем приоритетом стилевых слоёв</h1>
+    <p class="muted">
+      @layer группирует правила в слои и сравнивает слои по ОБЪЯВЛЕННОМУ
+      порядку, а не по источнику в файле. Поздний слой перекрывает ранний, даже
+      если его селектор менее специфичен. Внутри одного слоя действует обычный
+      каскад (специфичность и порядок объявления).
+    </p>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1) Порядок слоя сильнее специфичности</h2>
+        <div class="demo">
+          <div class="box">
+            <div class="title">.demo .title vs .title</div>
+            <p class="desc">
+              В слое base: <code>.demo .title { color: red }</code>. В слое
+              components: <code>.title { color: blue }</code>.<br />Итог: цвет —
+              синий (components позже base по порядку слоёв).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Утилиты перекрывают компоненты</h2>
+        <div class="demo">
+          <div class="box">
+            <div class="title text-green">
+              Утилита .text-green из слоя utilities
+            </div>
+            <p class="desc">
+              Даже если components покрасил заголовок в синий, утилита из
+              utilities (последний слой) меняет цвет на зелёный.
+            </p>
+          </div>
+          <div class="box">
+            <div class="title text-yellow">
+              .text-yellow перекрашивает поверх компонентов
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>
+          3) Порядок блоков в файле не важен — важен порядок в объявлении @layer
+        </h2>
+        <div class="demo">
+          <div class="box">
+            <div class="title">Слои можно располагать где угодно</div>
+            <p class="desc">
+              Мы объявили порядок:
+              <code>@layer reset, base, components, utilities;</code> — этого
+              достаточно. Содержимое слоёв может идти в любом месте
+              файла/импорта.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Важно</h2>
+        <ul>
+          <li>
+            Стили вне слоёв «сильнее», чем любые @layer. Лучше складывать всё по
+            слоям.
+          </li>
+          <li>
+            Внутри одного слоя побеждает более специфичный селектор или более
+            позднее правило.
+          </li>
+          <li>
+            Комбинируйте с <code>@scope</code> для локализации и с
+            <code>:where()</code> для снижения специфичности.
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

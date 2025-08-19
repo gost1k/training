@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS @property — наглядные примеры</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --blue: #60a5fa;
+        --green: #34d399;
+        --orange: #fb923c;
+        --pink: #f472b6;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+      h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      p.muted {
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .box {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      /* === Регистрация свойств (@property) ===
+         Делает кастомное свойство «типизированным»:
+         - участвует в переходах/анимациях
+         - вычисляется/валидируется по синтаксису
+         - имеет начальное значение и поведение наследования */
+
+      /* Цветовой токен */
+      @property --brand {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: #60a5fa;
+      }
+
+      /* Угол (для transform: rotate) */
+      @property --rotate {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+
+      /* Длина (например, для border-radius) */
+      @property --radius {
+        syntax: "<length>";
+        inherits: false;
+        initial-value: 8px;
+      }
+
+      /* Число (для прогресса/градентов и т.п.) */
+      @property --progress {
+        syntax: "<number>";
+        inherits: false;
+        initial-value: 0;
+      }
+
+      /* Идентификатор (для style queries с @container style(...)) */
+      @property --variant {
+        syntax: "<ident>";
+        inherits: true;
+        initial-value: outline;
+      }
+
+      /* === 1) Плавный переход цвета через зарегистрированный <color> === */
+      .color-demo .color-box {
+        background: var(--brand);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+        transition: --brand 500ms ease, background-color 500ms ease;
+      }
+      .color-demo .color-box:hover {
+        --brand: var(--orange);
+      }
+
+      /* === 2) Угол: вращение по var(--rotate) с плавным переходом === */
+      .angle-demo .spin {
+        inline-size: 80px;
+        block-size: 80px;
+        background: #0b1220;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        transform: rotate(var(--rotate));
+        transition: --rotate 800ms ease;
+      }
+      .angle-demo .spin:hover {
+        --rotate: 360deg;
+      }
+
+      /* Покажем inherits:false — дочерний не наследует угол родителя */
+      .angle-demo .spin.parent {
+        --rotate: 90deg;
+      }
+      .angle-demo .spin .child {
+        inline-size: 36px;
+        block-size: 36px;
+        background: #0b1220;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        transform: rotate(var(--rotate)); /* 0deg, т.к. inherits:false */
+      }
+
+      /* === 3) Длина: радиус скругления через var(--radius) === */
+      .length-demo .radius {
+        inline-size: 140px;
+        block-size: 60px;
+        background: #0b1220;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: --radius 400ms ease, border-radius 400ms ease;
+      }
+      .length-demo .radius:hover {
+        --radius: 24px;
+      }
+
+      /* === 4) Число: прогресс-дуга через conic-gradient и calc === */
+      .progress-demo .ring {
+        inline-size: 120px;
+        block-size: 120px;
+        border-radius: 999px;
+        background: conic-gradient(
+            var(--blue) calc(var(--progress) * 1%),
+            transparent 0
+          ),
+          radial-gradient(circle at 50% 50%, #0b1220 58%, transparent 59%);
+        border: 1px solid var(--border);
+        transition: --progress 800ms ease;
+      }
+      .progress-demo .ring:hover {
+        --progress: 75;
+      } /* 75% */
+
+      /* === 5) initial-value: используется, когда значение не задано === */
+      .initial-demo .sample {
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        padding: 10px;
+      }
+      .initial-demo .unset .token {
+        background: var(--brand);
+      }
+      .initial-demo .set {
+        --brand: var(--pink);
+      }
+      .initial-demo .set .token {
+        background: var(--brand);
+      }
+
+      /* === 6) @container style(...) с зарегистрированным --variant === */
+      .variant-demo .variant {
+        container: variant / style;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .variant-demo .variant__box {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 10px;
+        background: transparent;
+      }
+
+      @container style(--variant: filled) {
+        .variant-demo .variant__box {
+          background: color-mix(in oklab, var(--blue) 18%, #0b1220);
+          border-color: var(--blue);
+        }
+      }
+      @container style(--variant: outline) {
+        .variant-demo .variant__box {
+          background: transparent;
+          border-color: var(--orange);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS @property — примеры и пояснения</h1>
+    <p class="muted">
+      @property регистрирует кастомные свойства: задаёт тип (syntax),
+      наследование (inherits) и начальное значение (initial-value). Это
+      позволяет их анимировать/транзишнить и использовать в вычислениях
+      предсказуемо.
+    </p>
+
+    <div class="grid">
+      <section class="panel color-demo">
+        <h2>1) Цвет: плавный переход через зарегистрированне свойство</h2>
+        <div class="box color-box">Наведите, чтобы цвет сменился плавно</div>
+      </section>
+
+      <section class="panel angle-demo">
+        <h2>2) Угол: rotate(var(--rotate)) + inherits:false</h2>
+        <div class="row">
+          <div class="spin">hover</div>
+          <div class="spin parent">
+            родитель (90°)
+            <div class="child" title="дочерний не наследует --rotate"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel length-demo">
+        <h2>3) Длина: var(--radius) в border-radius</h2>
+        <div class="radius"></div>
+      </section>
+
+      <section class="panel progress-demo">
+        <h2>4) Число: прогресс‑индикатор (conic-gradient)</h2>
+        <div class="ring" title="hover → 75%"></div>
+      </section>
+
+      <section class="panel initial-demo">
+        <h2>5) initial-value и переопределение</h2>
+        <div class="row">
+          <div class="box unset">
+            <div
+              class="token"
+              style="
+                display: inline-block;
+                padding: 8px 12px;
+                border-radius: 8px;
+              "
+            >
+              initial (--brand = #60a5fa)
+            </div>
+          </div>
+          <div class="box set">
+            <div
+              class="token"
+              style="
+                display: inline-block;
+                padding: 8px 12px;
+                border-radius: 8px;
+              "
+            >
+              override (--brand = pink)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel variant-demo">
+        <h2>
+          6) @container style(...): только зарегистрированные custom props
+        </h2>
+        <p class="muted">
+          Для style‑queries с кастомными свойствами их нужно зарегистрировать
+          через @property. Здесь контейнер реагирует на <code>--variant</code>.
+        </p>
+        <div class="row">
+          <div class="variant" style="--variant: filled">
+            <div class="variant__box">filled</div>
+          </div>
+          <div class="variant" style="--variant: outline">
+            <div class="variant__box">outline</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="muted" style="margin-top: 16px">
+      Заметки: если значение не проходит валидацию по <code>syntax</code>,
+      свойство становится невалидным; переход будет дискретным или не состоится.
+      Для анимаций используйте совместимые типы (например,
+      <code>&lt;color&gt;</code>, <code>&lt;length&gt;</code>,
+      <code>&lt;angle&gt;</code>, <code>&lt;number&gt;</code>).
+    </p>
+  </body>
+</html>

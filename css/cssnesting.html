@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Nesting — Примеры</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #60a5fa;
+        --accent-2: #34d399;
+        --danger: #f87171;
+        --warn: #f59e0b;
+        --border: #334155;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      /* Card component: states, pseudo-classes/elements, BEM */
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+
+        &.is-active {
+          border-color: var(--accent);
+          box-shadow: 0 0 0 2px
+            color-mix(in oklab, var(--accent) 35%, transparent);
+        }
+
+        &:hover {
+          border-color: var(--accent);
+        }
+
+        &__title {
+          margin: 0 0 8px 0;
+          font-size: 18px;
+        }
+
+        &__text {
+          margin: 0 0 12px 0;
+          color: var(--muted);
+        }
+
+        &__btn {
+          display: inline-block;
+          padding: 8px 12px;
+          border: 1px solid var(--border);
+          border-radius: 8px;
+          background: #0b1220;
+          color: var(--text);
+          text-decoration: none;
+
+          &:hover,
+          &:focus-visible {
+            border-color: var(--accent);
+            color: white;
+            background: color-mix(in oklab, var(--accent) 35%, #0b1220);
+          }
+
+          &::before {
+            content: "★";
+            margin-right: 6px;
+            color: var(--accent);
+          }
+        }
+      }
+
+      /* Parent hover affects child */
+      .menu {
+        display: flex;
+        gap: 8px;
+        padding: 8px;
+        border: 1px dashed var(--border);
+        border-radius: 8px;
+
+        &__item {
+          padding: 6px 10px;
+          border-radius: 6px;
+          background: #0b1220;
+          border: 1px solid var(--border);
+        }
+
+        &:hover .menu__item {
+          border-color: var(--accent);
+        }
+
+        &:hover &__item--active {
+          background: color-mix(in oklab, var(--accent) 30%, #0b1220);
+          color: white;
+        }
+      }
+
+      /* Sibling combinators */
+      .alert {
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: #0b1220;
+        border: 1px solid var(--border);
+
+        &--danger {
+          border-color: var(--danger);
+          color: color-mix(in oklab, var(--danger) 85%, white);
+        }
+
+        & + & {
+          margin-top: 8px;
+        }
+      }
+
+      /* Leading combinator nesting */
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        > li {
+          padding: 6px 10px;
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          background: #0b1220;
+        }
+
+        > li + li {
+          margin-top: 6px;
+        }
+
+        > li > a {
+          color: var(--accent-2);
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      /* @media и @supports nested inside selector */
+      .layout {
+        display: grid;
+        gap: 12px;
+
+        @media (width >= 720px) {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @supports (backdrop-filter: blur(2px)) {
+          & .layout__box {
+            backdrop-filter: blur(2px);
+          }
+        }
+
+        .layout__box {
+          padding: 12px;
+          border-radius: 10px;
+          background: #0b1220;
+          border: 1px solid var(--border);
+        }
+      }
+
+      /* BEM modifiers combined */
+      .product {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px;
+        background: #0b1220;
+
+        &--featured {
+          border-color: var(--warn);
+        }
+
+        &__price {
+          color: var(--accent-2);
+          font-weight: 600;
+        }
+
+        &--featured &__price {
+          color: var(--warn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Nesting — несколько практических примеров</h1>
+
+    <div class="grid">
+      <section class="card is-active">
+        <h2 class="card__title">Card: состояния, псевдо-классы/элементы</h2>
+        <p class="card__text">Наведи на кнопку и саму карточку.</p>
+        <a class="card__btn" href="#">Кнопка</a>
+      </section>
+
+      <section>
+        <h2>Parent hover → child</h2>
+        <nav class="menu">
+          <span class="menu__item">Обычный</span>
+          <span class="menu__item menu__item--active">Активный</span>
+          <span class="menu__item">Ещё</span>
+        </nav>
+      </section>
+
+      <section>
+        <h2>Соседние элементы</h2>
+        <div class="alert">Первая</div>
+        <div class="alert alert--danger">Опасность</div>
+        <div class="alert">Третья</div>
+      </section>
+
+      <section>
+        <h2>Ведущий комбинатор</h2>
+        <ul class="list">
+          <li><a href="#">Пункт 1</a></li>
+          <li><a href="#">Пункт 2</a></li>
+          <li><a href="#">Пункт 3</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>@media и @supports внутри селектора</h2>
+        <div class="layout">
+          <div class="layout__box">Блок 1</div>
+          <div class="layout__box">Блок 2</div>
+          <div class="layout__box">Блок 3</div>
+          <div class="layout__box">Блок 4</div>
+        </div>
+      </section>
+
+      <section class="product product--featured">
+        <h2>Комбинации BEM-модификаторов</h2>
+        <div>Цена: <span class="product__price">999 ₽</span></div>
+      </section>
+    </div>
+  </body>
+</html>

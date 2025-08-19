@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS @scope — наглядные примеры</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --accent: #60a5fa;
+        --accent-2: #34d399;
+        --danger: #f87171;
+        --warn: #f59e0b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+
+      h2 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--panel-2);
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      /* === 1) Базовая область видимости ===
+       Стили внутри @scope применяются только к потомкам указанного корня. */
+      @scope (.card) {
+        :scope {
+          /* сам корневой элемент области */
+          border-color: var(--accent);
+        }
+
+        h3 {
+          /* превращается в :scope h3 */
+          margin: 0 0 8px 0;
+          color: var(--accent);
+        }
+
+        .btn {
+          /* только кнопки внутри .card */
+          border-color: var(--accent);
+        }
+
+        :scope:hover {
+          /* ховер самого .card */
+          box-shadow: 0 0 0 2px
+            color-mix(in oklab, var(--accent) 25%, transparent);
+        }
+      }
+
+      /* === 2) Граница области: to(...) ===
+       Стили не зайдут внутрь .card__footer */
+      @scope (.card) to (.card__footer) {
+        a {
+          color: var(--accent);
+          text-decoration-color: var(--accent);
+        }
+      }
+
+      .card {
+        border-radius: 12px;
+      }
+      .card__header {
+        margin-bottom: 8px;
+      }
+      .card__body {
+        margin-bottom: 8px;
+      }
+      .card__footer {
+        border-top: 1px solid var(--border);
+        padding-top: 8px;
+      }
+
+      /* === 3) Несколько независимых областей === */
+      @scope (.note) {
+        :scope {
+          border-color: var(--warn);
+          background: color-mix(in oklab, var(--warn) 12%, var(--panel));
+        }
+
+        strong {
+          color: var(--warn);
+        }
+        a {
+          color: var(--warn);
+        }
+      }
+
+      @scope (.box) {
+        :scope {
+          border-color: var(--accent-2);
+          background: color-mix(in oklab, var(--accent-2) 12%, var(--panel));
+        }
+
+        em {
+          color: var(--accent-2);
+        }
+        a {
+          color: var(--accent-2);
+        }
+      }
+
+      /* === 4) Вложенные области === */
+      @scope (.post) {
+        h3 {
+          color: var(--text);
+        }
+        .meta {
+          color: var(--muted);
+        }
+
+        /* Вложенная область, переопределяющая правила для секции комментариев */
+        @scope (.post .comments) {
+          :scope {
+            border: 1px dashed var(--border);
+            padding: 8px;
+            border-radius: 8px;
+          }
+          h4 {
+            color: var(--accent);
+          }
+          .comment {
+            background: var(--panel-2);
+            padding: 8px;
+            border-radius: 6px;
+          }
+          .comment + .comment {
+            margin-top: 6px;
+          }
+        }
+      }
+
+      /* Вне областей — обычные стили (для сравнения) */
+      .outside a {
+        color: var(--danger);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS @scope — простые и понятные примеры</h1>
+    <p class="muted">
+      Идея: стили внутри <code>@scope (селектор)</code> применяются только
+      внутрь указанного корня и не «протекают» наружу. Селектор
+      <code>:scope</code> указывает на сам корневой элемент области.
+    </p>
+
+    <div class="grid">
+      <section class="panel card">
+        <div class="card__header"><h3>1) Базовая область .card</h3></div>
+        <div class="card__body">
+          <p>
+            Заголовок и кнопка стилизованы только внутри <code>.card</code>.
+          </p>
+          <a class="btn" href="#">Кнопка в .card</a>
+        </div>
+        <div class="card__footer">
+          <p>
+            Секция footer — граница для правила со
+            <code>to(.card__footer)</code>: ссылки внутри не окрашиваются.
+          </p>
+          <a href="#">Ссылка в footer (останется обычной)</a>
+        </div>
+      </section>
+
+      <section class="panel outside">
+        <h2>Вне области .card</h2>
+        <p>
+          Эта кнопка — вне <code>.card</code>, значит правило из
+          <code>@scope(.card) {.btn {...}}</code> не подействует.
+        </p>
+        <a class="btn" href="#">Кнопка вне .card</a>
+        <p>
+          Здесь действует общий стиль секции: ссылки красные (для сравнения):
+          <a href="#">пример</a>
+        </p>
+      </section>
+
+      <section class="panel note">
+        <h2>2) Независимая область .note</h2>
+        <p>
+          <strong>Важное:</strong> здесь свои акценты и окраска ссылок
+          <a href="#">ссылка</a>.
+        </p>
+      </section>
+
+      <section class="panel box">
+        <h2>3) Ещё одна область .box</h2>
+        <p>
+          Выделение с помощью <em>курсива</em> и цвет ссылок
+          <a href="#">ссылка</a> отличаются от .note.
+        </p>
+      </section>
+
+      <section class="panel post">
+        <h2>4) Вложенные области: .post и .post .comments</h2>
+        <h3>Заголовок поста</h3>
+        <p class="meta">Мета-информация поста</p>
+        <div class="comments">
+          <h4>Комментарии</h4>
+          <div class="comment">Комментарий 1</div>
+          <div class="comment">Комментарий 2</div>
+        </div>
+      </section>
+    </div>
+
+    <p class="muted" style="margin-top: 16px">
+      Поддержка @scope постепенно появляется в браузерах. Если что-то не
+      сработало — обновите браузер до свежей версии Chromium/WebKit.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Container Queries — практические примеры</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --blue: #60a5fa;
+        --green: #34d399;
+        --orange: #fb923c;
+        --pink: #f472b6;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 16px 0;
+        font-size: 28px;
+      }
+      h2 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+      }
+      p.muted {
+        color: var(--muted);
+      }
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .box {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      /* === 1) Базовый пример: контейнер по inline-size === */
+      .card {
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: #0b1220;
+        padding: 12px;
+      }
+      .card {
+        container-type: inline-size;
+      } /* включаем размерный контейнер */
+      .card__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .card__media {
+        height: 120px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #1e293b, #111827);
+      }
+      .card__title {
+        font-weight: 700;
+      }
+      .card__desc {
+        color: var(--muted);
+      }
+
+      /* При ширине КОНТЕЙНЕРА >= 520px меняем компоновку только для этой карточки */
+      @container (min-width: 520px) {
+        .card__inner {
+          flex-direction: row;
+          gap: 12px;
+          align-items: center;
+        }
+        .card__media {
+          height: 140px;
+          inline-size: 160px;
+          flex: 0 0 160px;
+        }
+      }
+
+      /* === 2) Именованный контейнер === */
+      .product {
+        container-type: inline-size;
+        container-name: product;
+      }
+      .product {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: #0b1220;
+        padding: 12px;
+      }
+      .product__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .product__title {
+        font-weight: 700;
+      }
+      .product__price {
+        color: var(--green);
+        font-weight: 700;
+      }
+
+      @container product (min-width: 560px) {
+        .product__grid {
+          flex-direction: row;
+          align-items: center;
+        }
+        .product__price {
+          margin-left: auto;
+        }
+      }
+
+      /* === 3) Вложенные контейнеры === */
+      .panel.is-container {
+        container-type: inline-size;
+      }
+      .widget {
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        padding: 10px;
+        background: #0b1220;
+      }
+      .widget {
+        container-type: inline-size;
+      }
+      .widget__row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      /* Срабатывает только относительно размеров .widget */
+      @container (min-width: 480px) {
+        .widget__row {
+          flex-direction: row;
+        }
+      }
+
+      /* Срабатывает только относительно размеров внешней .panel (родительского контейнера) */
+      @container (min-width: 820px) {
+        .widget__title {
+          color: var(--blue);
+        }
+      }
+
+      /* === 4) Container units: cqw, cqh, cqi, cqb, cqmin, cqmax === */
+      .units {
+        container-type: inline-size;
+      }
+      .units .badge {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #0b1220;
+        /* ширина = 40% от ширины контейнера */
+        width: 40cqw;
+        /* размер шрифта относительно inline-size контейнера */
+        font-size: clamp(12px, 2.5cqi, 18px);
+        text-align: center;
+      }
+
+      /* === 5) Style queries: контейнер стиля === */
+      .variant {
+        container-type: style;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .variant__box {
+        border-radius: 8px;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background: #0b1220;
+      }
+
+      /* Реакция на пользовательский токен в корне контейнера */
+      @container style(--variant: filled) {
+        .variant__box {
+          background: color-mix(in oklab, var(--blue) 20%, #0b1220);
+          border-color: var(--blue);
+        }
+      }
+      @container style(--variant: outline) {
+        .variant__box {
+          background: transparent;
+          border-color: var(--orange);
+        }
+      }
+
+      /* === 6) Галерея: сетка по размерам контейнера, а не вьюпорта === */
+      .gallery {
+        container-type: inline-size;
+      }
+      .gallery__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .tile {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: #0b1220;
+        padding: 10px;
+        height: 80px;
+        flex: 1 1 100%;
+      }
+
+      @container (min-width: 520px) {
+        .tile {
+          flex: 1 1 calc(50% - 10px);
+        }
+      }
+      @container (min-width: 820px) {
+        .tile {
+          flex: 1 1 calc(33.333% - 10px);
+        }
+      }
+
+      /* Важное примечание: стили вне @container — обычные, для сравнения */
+    </style>
+  </head>
+  <body>
+    <h1>CSS Container Queries — примеры</h1>
+    <p class="muted">
+      Идея: правила внутри <code>@container</code> зависят от размеров (или
+      стиля) БЛИЖАЙШЕГО контейнера, а не окна. Это помогает делать по-настоящему
+      «компонентно-адаптивные» блоки.
+    </p>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1) Базовый контейнер: inline-size</h2>
+        <div class="card">
+          <div class="card__inner">
+            <div class="card__media"></div>
+            <div>
+              <div class="card__title">Карточка</div>
+              <div class="card__desc">
+                При ширине контейнера ≥ 520px слева появится медиа‑колонка.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Именованный контейнер</h2>
+        <div class="product">
+          <div class="product__grid">
+            <div>
+              <div class="product__title">Товар</div>
+              <p class="muted">
+                При ширине контейнера ≥ 560px цена уедет в правую колонку.
+              </p>
+            </div>
+            <div class="product__price">999 ₽</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel is-container">
+        <h2>3) Вложенные контейнеры</h2>
+        <p class="muted">
+          Внутренняя сетка <code>.widget</code> перестраивается при 480px ширины
+          самой .widget. Цвет заголовка меняется при 820px ширины внешней
+          панели.
+        </p>
+        <div class="widget">
+          <div class="widget__title">Виджет</div>
+          <div class="widget__row">
+            <div class="box">Ячейка A</div>
+            <div class="box">Ячейка B</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel units">
+        <h2>4) Container units</h2>
+        <p class="muted">
+          Ширина и размер текста зависят от размеров контейнера:
+          <code>cqw</code>, <code>cqi</code>, <code>cqmin</code>, и т.д.
+        </p>
+        <div class="badge">40cqw / 2.5cqi</div>
+      </section>
+
+      <section class="panel">
+        <h2>5) Style queries</h2>
+        <p class="muted">
+          Контейнер реагирует на собственный токен <code>--variant</code>.
+          Смените значение, чтобы увидеть разницу.
+        </p>
+        <div class="variant" style="--variant: filled">
+          <div class="variant__box">filled</div>
+        </div>
+        <div class="variant" style="--variant: outline; margin-top: 10px">
+          <div class="variant__box">outline</div>
+        </div>
+      </section>
+
+      <section class="panel gallery">
+        <h2>6) Галерея с брейкпоинтами по контейнеру</h2>
+        <div class="gallery__grid">
+          <div class="tile">1</div>
+          <div class="tile">2</div>
+          <div class="tile">3</div>
+          <div class="tile">4</div>
+          <div class="tile">5</div>
+          <div class="tile">6</div>
+        </div>
+        <p class="muted" style="margin-top: 10px">
+          Меняйте ширину панели (например, встроив её в узкую колонку) — сетка
+          перестраивается по ширине контейнера, а не окна.
+        </p>
+      </section>
+    </div>
+
+    <p class="muted" style="margin-top: 16px">
+      Поддержка: размерные контейнеры — широко поддерживаются; style‑queries —
+      нужны свежие браузеры. Если что-то не сработало, обновите Chromium/WebKit.
+    </p>
+  </body>
+</html>

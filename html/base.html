@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Demo — обзор большинства тегов</title>
+    <base target="_self" />
+    <link rel="icon" href="data:," />
+    <meta name="description" content="Демонстрационная страница HTML‑тегов по категориям" />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --accent: #60a5fa;
+        --green: #34d399;
+        --warn: #f59e0b;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      header.page {
+        margin-bottom: 16px;
+      }
+      header.page h1 { margin: 0 0 6px 0; font-size: 28px; }
+      header.page p { margin: 0; color: var(--muted); }
+
+      .categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .category {
+        flex: 1 1 420px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .category h2 { margin: 0 0 10px 0; font-size: 18px; }
+      .category .desc { margin: 0 0 12px 0; color: var(--muted); }
+      .items { display: flex; flex-wrap: wrap; gap: 10px; }
+      .item { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+
+      .block { padding: 10px; border-radius: 8px; border: 1px dashed var(--border); background: #0b1220; }
+      .muted { color: var(--muted); }
+
+      img.demo { display: block; inline-size: 200px; block-size: auto; border-radius: 8px; border: 1px solid var(--border); }
+      iframe.demo { inline-size: 260px; block-size: 160px; border: 1px solid var(--border); border-radius: 8px; background: #0b1220; }
+      canvas.demo { inline-size: 180px; block-size: 100px; background: #0b1220; border: 1px solid var(--border); border-radius: 8px; }
+
+      table.demo { border-collapse: collapse; min-inline-size: 280px; }
+      table.demo th, table.demo td { border: 1px solid var(--border); padding: 6px 8px; }
+      table.demo caption { caption-side: top; color: var(--muted); padding-bottom: 6px; }
+
+      dialog.demo { border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: var(--panel); color: var(--text); }
+      dialog.demo::backdrop { background: rgba(0,0,0,.45); }
+    </style>
+    <noscript><style>.requires-js{display:none}</style></noscript>
+  </head>
+  <body>
+    <header class="page">
+      <h1>HTML Demo — обзор тегов по категориям</h1>
+      <p>В каждом блоке — близкие по смыслу теги. Макет на flex для компактности.</p>
+    </header>
+
+    <main class="categories">
+      <section class="category">
+        <h2>Структура и секции</h2>
+        <p class="desc">Основные разделы документа, лендмарки.</p>
+        <div class="items">
+          <div class="item block">
+            <header>header — шапка раздела</header>
+            <nav>nav — навигация</nav>
+            <main>main — главное содержимое</main>
+            <article>article — самостоятельный материал</article>
+            <section>section — смысловой раздел с заголовком</section>
+            <aside>aside — боковой блок</aside>
+            <footer>footer — подвал раздела</footer>
+            <address>address — контакты автора</address>
+          </div>
+          <div class="item block">
+            <h1>h1</h1>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Группировка контента</h2>
+        <p class="desc">Блоки и цитаты, предварительно отформатированный текст.</p>
+        <div class="items">
+          <div class="item block">
+            <div>div — универсальный контейнер</div>
+            <p>p — абзац с <br /> переносом строки и <wbr>мягким‑переносом</wbr></p>
+            <hr />
+            <pre>pre —
+сохраняет пробелы
+и переводы строк</pre>
+            <blockquote cite="https://example.com">blockquote — цитата</blockquote>
+            <figure>
+              <figcaption>figure/figcaption — подпись к медиаконтенту</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Встроенная семантика и текст</h2>
+        <p class="desc">Смысловые акценты и специализированные элементы.</p>
+        <div class="items">
+          <div class="item block">
+            <a href="#">a — ссылка</a>, <span>span — инлайн контейнер</span>, <mark>mark</mark>, <em>em</em>, <strong>strong</strong>, <small>small</small>, <s>снято</s>, <u>u</u>, <i>i</i>, <b>b</b>
+            <p><abbr title="HyperText Markup Language">abbr</abbr>, <dfn id="dfn-html">dfn</dfn>, <cite>cite</cite>, «<q cite="https://example.com">q — короткая цитата</q>», <time datetime="2024-01-01">time</time>, <data value="42">data</data></p>
+            <p><code>code</code>, <var>x</var>, <samp>output</samp>, <kbd>Ctrl</kbd>, H<sub>2</sub>O, x<sup>2</sup></p>
+            <p><ruby>東<rt>dong</rt><rp>(</rp><rt>east</rt><rp>)</rp></ruby>, <bdi dir="rtl">ב</bdi>, <bdo dir="rtl">пример</bdo></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Списки</h2>
+        <p class="desc">Маркированные, нумерованные и описательные.</p>
+        <div class="items">
+          <div class="item block">
+            <ul>
+              <li>ul/li — пункт</li>
+              <li>ещё пункт</li>
+            </ul>
+          </div>
+          <div class="item block">
+            <ol start="3">
+              <li>ol/li — пункт</li>
+              <li>ещё пункт</li>
+            </ol>
+          </div>
+          <div class="item block">
+            <dl>
+              <dt>HTML</dt>
+              <dd>Язык разметки гипертекста</dd>
+              <dt>CSS</dt>
+              <dd>Таблицы стилей</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Медиа и встраивания</h2>
+        <p class="desc">Изображения, видео/аудио, карты изображений, canvas, iframe, object.</p>
+        <div class="items">
+          <div class="item block">
+            <picture>
+              <source media="(min-width: 600px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+              <img class="demo" alt="demo img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" />
+            </picture>
+            <map name="m">
+              <area shape="rect" coords="0,0,50,50" href="#" alt="area" />
+            </map>
+          </div>
+          <div class="item block">
+            <video controls width="240">
+              <source src="" type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+            <audio controls>
+              <source src="" type="audio/mpeg" />
+              Ваш браузер не поддерживает аудио.
+            </audio>
+            <track kind="captions" />
+          </div>
+          <div class="item block">
+            <canvas class="demo" id="cv"></canvas>
+          </div>
+          <div class="item block">
+            <iframe class="demo" srcdoc="<p style='color:#333'>iframe</p>"></iframe>
+            <embed type="image/svg+xml" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40'%3E%3Crect width='80' height='40' fill='%2360a5fa'/%3E%3C/svg%3E" />
+            <object data="about:blank" type="text/html" width="120" height="40"></object>
+            <param name="demo" value="1" />
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Таблицы</h2>
+        <p class="desc">Табличная структура с colgroup/thead/tbody/tfoot.</p>
+        <div class="items">
+          <div class="item block">
+            <table class="demo">
+              <caption>caption — подпись таблицы</caption>
+              <colgroup>
+                <col span="1" />
+                <col span="1" />
+              </colgroup>
+              <thead><tr><th>TH</th><th>Значение</th></tr></thead>
+              <tbody><tr><td>TD</td><td>Ячейка</td></tr></tbody>
+              <tfoot><tr><td colspan="2">tfoot</td></tr></tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Формы и элементы управления</h2>
+        <p class="desc">Интерактивные поля и группы.</p>
+        <div class="items">
+          <form class="item block" onsubmit="return false">
+            <fieldset>
+              <legend>fieldset / legend</legend>
+              <label>Текст: <input type="text" placeholder="input" /></label>
+              <label>Email: <input type="email" /></label>
+              <label>Пароль: <input type="password" /></label>
+              <label>Число: <input type="number" min="0" max="10" /></label>
+              <label>Диапазон: <input type="range" min="0" max="100" /></label>
+              <label>Дата: <input type="date" /></label>
+              <label>Цвет: <input type="color" /></label>
+              <label>Файл: <input type="file" /></label>
+              <div>
+                <label><input type="checkbox" /> checkbox</label>
+                <label><input type="radio" name="r" /> radio A</label>
+                <label><input type="radio" name="r" /> radio B</label>
+              </div>
+              <label>Textarea: <textarea rows="2" cols="20"></textarea></label>
+              <label>
+                Select:
+                <select>
+                  <optgroup label="Группа 1">
+                    <option>Опция 1</option>
+                  </optgroup>
+                  <optgroup label="Группа 2">
+                    <option>Опция 2</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>
+                Datalist:
+                <input list="dl" />
+                <datalist id="dl">
+                  <option value="HTML" />
+                  <option value="CSS" />
+                </datalist>
+              </label>
+              <div>
+                <button type="button">button</button>
+                <button type="submit">submit</button>
+                <button type="reset">reset</button>
+              </div>
+              <div>
+                <meter min="0" max="100" value="60">60%</meter>
+                <progress max="100" value="30">30%</progress>
+                <output id="out">output</output>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Интерактив и диалоги</h2>
+        <p class="desc">Раскрывающиеся панели и стандартное модальное окно.</p>
+        <div class="items">
+          <div class="item block">
+            <details>
+              <summary>details/summary — нажми, чтобы раскрыть</summary>
+              <p class="muted">Содержимое секции</p>
+            </details>
+          </div>
+          <div class="item block requires-js">
+            <button id="openDlg">Открыть &lt;dialog&gt;</button>
+            <dialog class="demo" id="dlg">
+              <form method="dialog">
+                <h3>Диалог</h3>
+                <p class="muted">Диалог с backdrop и управлением фокусом.</p>
+                <menu>
+                  <button value="cancel">Отмена</button>
+                  <button value="ok">ОК</button>
+                </menu>
+              </form>
+            </dialog>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Скрипты, шаблоны и веб‑компоненты</h2>
+        <p class="desc">script, noscript, template, slot (демо).</p>
+        <div class="items">
+          <div class="item block">
+            <template id="tpl"><span style="color:var(--green)">template → клонирован</span></template>
+            <div id="tplMount"></div>
+          </div>
+          <div class="item block">
+            <x-demo>
+              <slot>slot — содержимое по умолчанию</slot>
+            </x-demo>
+            <noscript>noscript — выводится, если JS выключен</noscript>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="muted" style="margin-top:16px">В шапке документа задействованы также мета‑теги: <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;style&gt;</code>, заголовок <code>&lt;title&gt;</code>.</footer>
+
+    <script>
+      // canvas демо
+      (function(){
+        const c = document.getElementById('cv');
+        if (!c) return;
+        const x = c.getContext('2d');
+        const w = c.width = c.clientWidth, h = c.height = c.clientHeight;
+        x.fillStyle = '#0b1220'; x.fillRect(0,0,w,h);
+        x.fillStyle = '#60a5fa'; x.fillRect(10,10,w-20,h-20);
+      })();
+
+      // dialog демо
+      (function(){
+        const btn = document.getElementById('openDlg');
+        const dlg = document.getElementById('dlg');
+        if (btn && dlg && dlg.showModal) {
+          btn.addEventListener('click', () => dlg.showModal());
+        }
+      })();
+
+      // template демо
+      (function(){
+        const t = document.getElementById('tpl');
+        const m = document.getElementById('tplMount');
+        if (t && m && 'content' in t) {
+          m.appendChild(t.content.cloneNode(true));
+        }
+      })();
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dialog и ::backdrop — практические примеры</title>
+    <style>
+      /* Базовые переменные темы */
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-2: #0b1220;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --border: #334155;
+        --brand: #60a5fa; /* акцент для демонстраций */
+        --success: #34d399;
+        --danger: #ef4444;
+      }
+
+      /* Общий каркас страницы */
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          "Noto Sans";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        padding: 24px;
+      }
+
+      h1 {
+        margin: 0 0 12px 0;
+        font-size: 28px;
+      }
+      p.muted {
+        color: var(--muted);
+        margin: 0 0 16px 0;
+      }
+
+      .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--text);
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Оформление самих диалогов */
+      dialog.dlg {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        background: var(--panel);
+        color: var(--text);
+        max-inline-size: 520px;
+      }
+      dialog.dlg::backdrop {
+        /* по умолчанию — прозрачно. Переопределяем в модификаторах ниже */
+      }
+      dialog.dlg[open] {
+        animation: dlg-in 160ms ease-out;
+      }
+      @keyframes dlg-in {
+        from {
+          opacity: 0;
+          transform: translateY(4px) scale(0.98);
+        }
+      }
+
+      /* === Пример 1. Базовый модальный диалог с затемнением и blur === */
+      /* ::backdrop — псевдо-элемент, который покрывает весь вьюпорт позади top-layer элемента */
+      .dlg--basic::backdrop {
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(2px);
+      }
+
+      /* === Пример 2. Модальный диалог с «брендовым» оттенком === */
+      .dlg--brand::backdrop {
+        /* Полупрозрачная подложка с примесью фирменного цвета */
+        background: color-mix(in oklab, var(--brand) 30%, rgba(0, 0, 0, 0.55));
+        backdrop-filter: saturate(1.2) blur(1.5px);
+      }
+
+      /* === Пример 3. Диалог-«шторка» снизу и заметная подложка === */
+      .dlg--sheet {
+        inset: auto 0 0 0;
+        max-inline-size: none;
+        border-radius: 12px 12px 0 0;
+      }
+      .dlg--sheet[open] {
+        animation: sheet-in 200ms ease-out;
+      }
+      @keyframes sheet-in {
+        from {
+          transform: translateY(12px);
+          opacity: 0;
+        }
+      }
+      .dlg--sheet::backdrop {
+        background: radial-gradient(
+          120% 100% at 50% 100%,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.35)
+        );
+        backdrop-filter: blur(1.5px);
+      }
+
+      /* === Пример 4. Немодальный диалог: show() → НЕТ backdrop === */
+      /* Для наглядности — рамка и тень */
+      .dlg--nonmodal {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      /* === Пример 5. Полноэкранный режим и :fullscreen::backdrop === */
+      .fs-box {
+        inline-size: 100%;
+        block-size: 200px;
+        border: 1px dashed var(--border);
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: var(--panel-2);
+      }
+      :fullscreen::backdrop {
+        /* Бэкдроп полноэкранного элемента */
+        background: rgba(0, 0, 0, 0.75);
+      }
+
+      /* Подписи/примечания внутри примеров */
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dialog и ::backdrop — примеры</h1>
+    <p class="muted">
+      ::backdrop доступен для элементов top layer: модальный
+      <code>&lt;dialog&gt;</code> (showModal) и полноэкранные элементы. Для
+      немодального диалога backdrop нет.
+    </p>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1) Базовый модальный диалог с затемнением</h2>
+        <div class="row">
+          <button class="btn" id="openBasic">Открыть базовый</button>
+        </div>
+        <p class="note">
+          Клик по подложке не закрывает диалог по умолчанию. Закройте кнопкой
+          или Esc.
+        </p>
+        <dialog class="dlg dlg--basic" id="dlgBasic">
+          <form method="dialog">
+            <h3>Базовый диалог</h3>
+            <p class="muted">Простое затемнение и лёгкий blur на ::backdrop.</p>
+            <menu class="row" style="margin-top: 12px">
+              <button class="btn" value="ok">ОК</button>
+              <button class="btn" value="cancel">Отмена</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="panel">
+        <h2>2) Модальный с брендовой подложкой</h2>
+        <div class="row">
+          <button class="btn" id="openBrand">Открыть брендовый</button>
+        </div>
+        <p class="note">
+          Подложка смешивает акцентный цвет и чёрный для выразительного фона.
+        </p>
+        <dialog class="dlg dlg--brand" id="dlgBrand">
+          <form method="dialog">
+            <h3>Брендовый диалог</h3>
+            <p class="muted">Используем color-mix и backdrop-filter.</p>
+            <menu class="row" style="margin-top: 12px">
+              <button class="btn" value="ok">ОК</button>
+              <button class="btn" value="close">Закрыть</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="panel">
+        <h2>3) Шторка снизу (sheet) + градиентный backdrop</h2>
+        <div class="row">
+          <button class="btn" id="openSheet">Открыть шторку</button>
+        </div>
+        <p class="note">
+          Диалог прижат к низу, а ::backdrop — радиальный градиент.
+        </p>
+        <dialog class="dlg dlg--sheet" id="dlgSheet">
+          <form method="dialog">
+            <h3>Шторка</h3>
+            <p class="muted">Удобно для мобильных bottom sheets.</p>
+            <menu class="row" style="margin-top: 12px">
+              <button class="btn" value="close">Закрыть</button>
+            </menu>
+          </form>
+        </dialog>
+      </section>
+
+      <section class="panel">
+        <h2>4) Немодальный диалог (без backdrop)</h2>
+        <div class="row">
+          <button class="btn" id="openNonModal">Показать немодальный</button>
+          <button class="btn" id="closeNonModal">Скрыть</button>
+        </div>
+        <p class="note">
+          Вызов <code>show()</code> делает диалог немодальным — он НЕ попадает в
+          top layer и не создаёт ::backdrop.
+        </p>
+        <dialog class="dlg dlg--nonmodal" id="dlgNonModal">
+          <p>
+            Я немодальный диалог. Можно взаимодействовать со страницей позади.
+          </p>
+        </dialog>
+      </section>
+
+      <section class="panel">
+        <h2>5) Полноэкранный режим и :fullscreen::backdrop</h2>
+        <div class="row">
+          <button class="btn" id="enterFs">Во весь экран</button>
+          <button class="btn" id="exitFs">Выйти</button>
+        </div>
+        <div class="fs-box" id="fsBox">Эта область войдёт в fullscreen</div>
+        <p class="note">
+          В полноэкранном режиме можно стилизовать фоновую подложку через
+          селектор <code>:fullscreen::backdrop</code>.
+        </p>
+      </section>
+    </div>
+
+    <script>
+      // Открытие/закрытие диалогов
+      const $ = (s, r = document) => r.querySelector(s);
+      $("#openBasic")?.addEventListener("click", () =>
+        $("#dlgBasic").showModal()
+      );
+      $("#openBrand")?.addEventListener("click", () =>
+        $("#dlgBrand").showModal()
+      );
+      $("#openSheet")?.addEventListener("click", () =>
+        $("#dlgSheet").showModal()
+      );
+
+      // Немодальный диалог: show()/close()
+      const nm = $("#dlgNonModal");
+      $("#openNonModal")?.addEventListener("click", () => nm?.show());
+      $("#closeNonModal")?.addEventListener("click", () => nm?.close());
+
+      // Полноэкранный режим
+      const fsBox = $("#fsBox");
+      $("#enterFs")?.addEventListener("click", async () => {
+        try {
+          await fsBox?.requestFullscreen?.();
+        } catch (e) {
+          console.warn(e);
+        }
+      });
+      $("#exitFs")?.addEventListener("click", async () => {
+        try {
+          await document.exitFullscreen?.();
+        } catch (e) {
+          console.warn(e);
+        }
+      });
+
+      // Закрытие по клику по backdrop (не стандарт, делаем вручную)
+      // При клике по самой подложке браузер не генерирует событие на dialog,
+      // но можно имитировать «клик вне» через pointerdown/up с проверкой target
+      for (const dlg of document.querySelectorAll("dialog[open]")) {
+        // На загрузке обычно диалоги закрыты; оставлено как заготовка.
+      }
+
+      // Пример: закрывать шторку по клику вне содержимого
+      (function attachOutsideClose(id) {
+        const d = document.getElementById(id);
+        if (!d) return;
+        let startInDialog = false;
+        d.addEventListener("pointerdown", (e) => {
+          startInDialog = e.target === d;
+        });
+        d.addEventListener("pointerup", (e) => {
+          if (startInDialog && e.target === d) d.close();
+        });
+      })("dlgSheet");
+    </script>
+  </body>
+</html>
