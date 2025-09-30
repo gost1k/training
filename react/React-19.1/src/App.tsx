@@ -17,26 +17,34 @@ function App() {
     )
     return (
         <>
-            <div>Какой-то текст</div>
+        <div className="grid grid-cols-[1fr_1fr]">
             <div>
-                <ul>
-                    {renderList}
-                </ul>
+                <div>Какой-то текст</div>
+                <div>
+                    <ul>
+                        {renderList}
+                    </ul>
+                </div>
+                <div>
+                    <button onClick={() => setCount(count => count + 1)}>
+                        {count}
+                    </button>
+                </div>
             </div>
             <div>
-                <button onClick={() => setCount((count) => count++)}>
-                    {count}
-                </button>
+                <div className="mt-3">
+                    <button onClick={() => setIsShow(prevValue => !prevValue)}>{isShow ? 'Скрыть' : 'Отображать'} ComponentWithProps</button>
+                    {isShow && <ComponentWithProps
+                        title={title}
+                        text={text}
+                        func={func}
+                    />}
+                </div>
             </div>
+        </div>
+            
 
-            <div className="mt-3">
-                <button onClick={() => setIsShow(prevValue => !prevValue)}>{isShow ? 'Скрыть' : 'Отображать'} ComponentWithProps</button>
-                {isShow && <ComponentWithProps
-                    title={title}
-                    text={text}
-                    func={func}
-                />}
-            </div>
+            
             
 
         </>
