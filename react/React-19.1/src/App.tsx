@@ -1,16 +1,17 @@
 import { useState } from "react"
 import ComponentWithProps from './ComponentWithProps'
+import InputComponent from './InputComponent'
 const list = [1,2,3]
 const title = 'Заголовок пропса'
 
-/** Функция Alert переданная в props */
-const func = () => alert('call Func')
 
 function App() {
     const [count, setCount] = useState(0)
     const [text, setText] = useState('Текст пропса')
     const [isShow, setIsShow] = useState(false)
+    const [inputText, setInputText] = useState('Содержимое инпута')
 
+    const func = () => setText('новый текст')
 
     const renderList = list.map(item => 
         <li key={item}>{item}</li>
@@ -29,6 +30,9 @@ function App() {
                     <button onClick={() => setCount(count => count + 1)}>
                         {count}
                     </button>
+                </div>
+                <div>
+                    <InputComponent placeholder='Плейсхолдер' text={inputText} setInputText={setInputText}/>
                 </div>
             </div>
             <div>

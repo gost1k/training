@@ -1,4 +1,4 @@
-function ComponentWithProps({ title, text, func }) {
+function ComponentWithProps({ title, text, func }: {title: string, text: string, func: () => void}) {
     return (
         <>
             <h2>{title}</h2>
