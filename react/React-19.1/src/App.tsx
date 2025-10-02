@@ -19,7 +19,7 @@ function App() {
         <>
         <div className="grid grid-cols-[1fr_1fr]">
             <div>
-                <div>Какой-то текст</div>
+                <h2 className="text-2xl">Какой-то текст</h2>
                 <div>
                     <ul>
                         {renderList}
