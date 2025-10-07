@@ -6,8 +6,6 @@ const Singleton = (() => {
 Singleton() === Singleton();
 
 
-
-
 // Factory Method - создает объекты, не указывая конкретный класс
 const createUser = (role) =>
   role === 'admin'
@@ -22,8 +20,6 @@ const createGUI = f => ({ button: f.createButton() });
 createGUI(macFactory);
 
 
-
-
 // Builder - поэтапная сборка сложного объекта
 class CarBuilder {
   constructor() { this.car={} }
@@ -32,8 +28,6 @@ class CarBuilder {
   build => this.car
 }
 new CarBuilder().setColor('red').setSeats(4).build();
-
-
 
 
 // Prototype - создание новых объектов на основе существующего
