@@ -54,3 +54,21 @@ const res = orders.reduce((acc, { user, items }, index, arr) => {
 }, {})
 
 
+
+// Codewars интересные задачи
+
+/** 
+    let testData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15];
+    let actual = countPositivesSumNegatives(testData);
+    let expected = [10, -65];
+ */
+function countPositivesSumNegatives(input) {
+  if(!input || !Array.isArray(input) || !input.length) return []
+  const positive = input.filter(x => x > 0).length
+  const negative = input.filter(x => x < 0).reduce((acc, num) => {
+    acc = acc + num
+    return acc
+  } , 0)
+  
+  return [positive, negative]
+}
