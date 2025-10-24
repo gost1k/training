@@ -36,3 +36,26 @@ p2.promise.then(value => console.log('p2 resolved with', value));
 // Разрешаем их по разному
 p1.resolve('результат 1');
 p2.resolve('результат 2');
+
+/** String.prototype.isWellFormed() .toWellFormed() */
+console.log('hello world'.isWellFormed())
+console.log('\uD83D'.toWellFormed().isWellFormed())
+
+/** Regexp /v the character U+1d49c "𝒜" */
+console.log('Regexp /v', (/[a-z𝒜-𝓏]/v).test('𝒜'))
+
+/** Record и Tuple неизменяемый объект и массив */
+// Только с babel через npm, браузеры не поддерживают
+// const record = #{ name: 'Andrey', age: 36 }
+// const tuple = #[1,2,3]
+
+/** Pepline Operator */
+// Только с babel через npm, браузеры не поддерживают
+// const result = "-64"
+//   |> parseInt
+//   |> Math.abs
+//   |> Math.sqrt;
+// Аналог const result = Math.sqrt(Math.abs(parseInt("-64")));
+
+/** Atomics.waitAsync() */
+// Не разобрался с ходу, надо копать...
