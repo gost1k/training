@@ -53,6 +53,10 @@ const res = orders.reduce((acc, { user, items }, index, arr) => {
     return acc
 }, {})
 
+// Сортировка кириллицы через Intl.Collator
+const a = ["АА",'Аа',  "Пра", "ПРи", "ПрЯ", "Прб", 'file1', 'file2', 'file10']
+const collator = new Intl.Collator('ru', { sensivity: 'base', numeric: true })
+a.sort(collator.compare) 
 
 
 // Codewars интересные задачи
